@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Modyn
+    </ion-title>
+    <ion-button fill="clear" slot="end" mode="ios" color="light" (click)="opensearchbar">
+        <ion-icon name="search"></ion-icon>
+    </ion-button>
+
+  </ion-toolbar>
+      <!-- Default Segment -->
+    <ion-segment (ionChange)="segmentChanged($event)">
+      <ion-segment-button checked value="friends">
+        <ion-label>Amigos</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="nearfriends">
+        <ion-label>Amigos Proximos</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+</ion-header>
+
+<ion-content>
+    <div [hidden]="current != 'friends'">
+            <ion-card class="animated bounceInUp" *ngFor="let f of friends">
+                <img src="{{f.photo}}" alt="" />
+                <ion-card-header>
+                    <ion-card-subtitle>{{f.name}}</ion-card-subtitle>
+                    <ion-card-title>{{f.titleimg}}</ion-card-title>
+                </ion-card-header>
+                  <ion-card-content> 
+                    <ion-item>
+                        <ion-button ion-button color="like.color" (click)="handleLike(f.id)" fill="clear" mode="ios">
+                            <ion-icon slot="icon-only" name="thumbs-up"></ion-icon>
+                        </ion-button>
+                        <ion-label class="tex-center">{{like.qtd[f.id]}} like{{like.qtd[f.id] != 1 ? 's':''}}</ion-label>
+                        <ion-button ion-button color="dark" (click)="handleDislike(f.id)" fill="clear" mode="ios">
+                            <ion-icon slot="icon-only" name="thumbs-down"></ion-icon>
+                        </ion-button>
+                    </ion-item>
+                  </ion-card-content>
+            </ion-card>
+    </div>
+
+    <div [hidden]="current != 'nearfriends'">
+        <ion-card class="animated bounceInUp" *ngFor="let nf of nearfriends">
+            <img src="{{nf.photo}}" alt="" />
+            <ion-card-header>
+                <ion-card-subtitle>{{nf.name}}</ion-card-subtitle>
+                <ion-card-title>{{nf.titleimg}}</ion-card-title>
+            </ion-card-header>
+              <ion-card-content>
+                <ion-item>
+                    <ion-icon slot="start" name="thumbs-up"></ion-icon>
+                      <ion-label class="tex-center">Avalie</ion-label>
+                    <ion-icon slot="end" name="thumbs-down"></ion-icon>
+                </ion-item>
+              </ion-card-content>
+        </ion-card>
+    </div>
+
+
+
+</ion-content>

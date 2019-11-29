@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color='primary'>
+    <ion-title>
+      Perfil
+    </ion-title>
+    <ion-button fill='clear' slot='end'color='light' mode='ios' (click)="edit()">
+        <ion-icon name="create"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+   <ion-card [hidden]='update' class="animated bounceInUp">
+      <img class='fotoperfil' src="http://br.web.img3.acsta.net/c_215_290/pictures/16/09/05/17/16/068414.jpg">
+      <ion-card-header>
+          <ion-card-subtitle>Gabriel</ion-card-subtitle>
+          <ion-card-title>Segundinha</ion-card-title>
+          <ion-label class="text-end">like</ion-label>
+      </ion-card-header>
+    </ion-card>
+
+    <div [hidden]="!update">
+      <ion-item>
+        <ion-label position="floating">novo  {{update}}</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    </div>
+
+</ion-content>
+
