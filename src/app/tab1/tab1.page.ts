@@ -66,11 +66,15 @@ export class Tab1Page {
     }
 
 
-    
+    updatesearch: boolean = false;
     
     constructor(){
     }
   
+
+    opensearchbar(){
+        this.updatesearch = !this.updatesearch;
+    }
         
     
     segmentChanged(e){

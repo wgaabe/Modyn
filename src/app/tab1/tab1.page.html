@@ -1,9 +1,16 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>
-      Modyn
-    </ion-title>
-    <ion-button fill="clear" slot="end" mode="ios" color="light" (click)="opensearchbar">
+
+      <div [hidden]="current = 'updatesearch'">
+          <ion-title>
+            Modyn
+          </ion-title>
+      </div>
+        <div [hidden]="current != 'updatesearch'"> 
+          <ion-searchbar showCancelButton="focus" class="searchbaropen"></ion-searchbar>
+        </div>
+
+    <ion-button fill="clear" slot="end" mode="ios" color="light" (click)="opensearchbar()">
         <ion-icon name="search"></ion-icon>
     </ion-button>
 

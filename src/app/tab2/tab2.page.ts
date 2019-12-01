@@ -13,7 +13,7 @@ export class Tab2Page {
 
 	edit(){
 		this.update = !this.update;
-	}
+  }
 
     btnActivate(ionicButton) {
         ionicButton.color =  'primary';
