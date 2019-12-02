@@ -7,17 +7,16 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-	update: boolean = false;
-	
-  	constructor() {}
+update: boolean = false;
 
-	edit(){
-		this.update = !this.update;
-  }
+  constructor() {}
+
+edit() {
+this.update = !this.update;
+}
 
     btnActivate(ionicButton) {
         ionicButton.color =  'primary';
 
     }
-    
 }

@@ -8,7 +8,10 @@ import { Component } from '@angular/core';
 
 export class Tab1Page {
 
-    current:any = 'friends';
+constructor() {
+}
+
+    current: any = 'friends';
     friends = [
         {
             id: 0,
@@ -22,8 +25,7 @@ export class Tab1Page {
             photo: 'https://i.pinimg.com/236x/0f/5f/2d/0f5f2d93f13e8c0f1eb3976aa581f90d.jpg',
             titleimg: 'Partiu rodeio',
         }
-    ]
-
+    ];
 
     nearfriends = [
         {
@@ -38,19 +40,22 @@ export class Tab1Page {
             photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyFkRrtEpDf0wgx4qBJoH33jiawNuRbBLNJm6A9OAA4Vdqa20_&s',
             titleimg: 'Só o pó da gaita',
         }
-    ]
+    ];
 
-    like:any={
-        color:'dark',
+    like: any = {
+        color: 'dark',
         qtd: {
             0: 10,
             1: 5
         }
     };
-    
+
+
+updatesearch: boolean = false;
+
     handleLike(id) {
         this.like.qtd[id]++;
-        if(this.like.color == 'dark') {
+        if (this.like.color === 'dark') {
             this.like.color =  'primary';
         } else {
             this.like.color = 'dark';
@@ -58,26 +63,18 @@ export class Tab1Page {
     }
     handleDislike(id) {
         this.like.qtd[id]--;
-        if(this.like.color == 'dark') {
+        if (this.like.color === 'dark') {
             this.like.color =  'primary';
         } else {
             this.like.color = 'dark';
         }
     }
 
-
-    updatesearch: boolean = false;
-    
-    constructor(){
-    }
-  
-
-    opensearchbar(){
+    opensearchbar() {
         this.updatesearch = !this.updatesearch;
     }
-        
-    
-    segmentChanged(e){
+
+    segmentChanged(e) {
         this.current = e.detail.value;
     }
 
