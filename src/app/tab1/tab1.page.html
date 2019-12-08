@@ -9,11 +9,9 @@
           <ion-searchbar showCancelButton="focus" class="searchbaropen">
           </ion-searchbar>
         </div>
-
     <ion-button fill="clear" slot="end" mode="ios" color="light" (click)="opensearchbar()">
         <ion-icon name="search"></ion-icon>
     </ion-button>
-
   </ion-toolbar>
     <ion-segment (ionChange)="segmentChanged($event)">
       <ion-segment-button checked value="friends">
@@ -46,7 +44,6 @@
                   </ion-card-content>
             </ion-card>
     </div>
-
     <div [hidden]="current != 'nearfriends'">
         <ion-card class="animated bounceInUp" *ngFor="let nf of nearfriends">
             <img src="{{nf.photo}}" alt="" />
@@ -63,7 +60,4 @@
               </ion-card-content>
         </ion-card>
     </div>
-
-
-
 </ion-content>

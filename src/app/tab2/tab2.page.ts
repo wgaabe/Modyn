@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { PhotoViewer } from '@ionic-native/photo-viewer';
+import { NgxIonicImageViewerModule } from 'ngx-ionic-image-viewer';
 
 @Component({
   selector: 'app-tab2',
@@ -18,5 +20,5 @@ this.update = !this.update;
     btnActivate(ionicButton) {
         ionicButton.color =  'primary';
 
+         }
     }
-}
