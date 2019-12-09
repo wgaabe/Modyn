@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import { PhotoViewer } from '@ionic-native/photo-viewer';
-import { NgxIonicImageViewerModule } from 'ngx-ionic-image-viewer';
-
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',

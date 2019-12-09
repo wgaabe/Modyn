@@ -25,7 +25,7 @@
 
 <ion-content>
     <div [hidden]="current != 'friends'">
-            <ion-card class="animated bounceInUp" *ngFor="let f of friends">
+            <ion-card class="animated bounceInUp margincard" *ngFor="let f of friends">
                 <img src="{{f.photo}}" alt="" />
                 <ion-card-header>
                     <ion-card-subtitle>{{f.name}}</ion-card-subtitle>
@@ -45,7 +45,7 @@
             </ion-card>
     </div>
     <div [hidden]="current != 'nearfriends'">
-        <ion-card class="animated bounceInUp" *ngFor="let nf of nearfriends">
+        <ion-card class="animated bounceInUp margincard" *ngFor="let nf of nearfriends">
             <img src="{{nf.photo}}" alt="" />
             <ion-card-header>
                 <ion-card-subtitle>{{nf.name}}</ion-card-subtitle>
